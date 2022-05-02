@@ -1,0 +1,29 @@
+<%- include('../partials/header') %>
+
+    <h1><%= title %></h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Species</th>
+          <th>Weight</th>
+          <th>Preview</th>
+          <th>Additional Details</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <% fishes.forEach(function(f) { %>
+            <tr>
+              <td><%= f.dateCaught %></td>
+              <td><%= f.fishSpecies %></td>
+              <td><%= f.weight %> lbs.</td>
+              <td> </td>
+              <td><a href="/fishes/<%= f._id %>">Details</a></td>
+            </tr>
+        <% }); %>
+
+      </tbody>
+    </table>
+
+<%- include('../partials/footer') %>

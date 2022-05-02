@@ -1,0 +1,68 @@
+<%- include('../partials/header') %>
+
+    <h2><%= title %></h2>
+    <form action="/fishes" method="POST">
+      <label>
+          Date Caught: 
+        <input type="date" name="dateCaught"/>
+      </label>
+        <br/>
+
+      <label>
+          Fish Species:
+        <select name="fishSpecies">
+          <option value="Blue Gill">Blue Gill</option>
+          <option value="Bowfin">Bowfin</option>
+          <option value="Carp">Carp</option>
+          <option value="Catfish">Catfish</option>
+          <option value="Gar">Gar</option>
+          <option value="Largemouth Bass" selected>Largemouth Bass</option>
+          <option value="Smallmouth Bass">Smallmouth Bass</option>
+          <option value="Muskie">Muskie</option>
+          <option value="Northern Pike">Northern Pike</option>
+          <option value="Rock Bass">Rock Bass</option>
+          <option value="Pickerel">Pickerel</option>
+          <option value="Salmon">Salmon</option>
+          <option value="Sturgeon">Sturgeon</option>
+          <option value="Sucker">Sucker</option>
+          <option value="Sunfish">Sunfish</option>
+          <option value="Trout">Trout</option>
+          <option value="Walleye">Walleye</option>
+          <option value="Whitefish">Whitefish</option>
+          <option value="Yellow Perch">Yellow Perch</option>
+        </select>
+        </label>
+      <br/>
+
+      <label>
+        Location (nearby city):
+        <input type="text" name="location" />
+      </label>
+        <br/>
+
+      <label>
+        Weight:
+          <input type="number" name="weight" /> lbs.</label>
+      <br/>
+
+      <label>
+        Length:
+        <input type="number" name="lengthFish" /> cm</label>
+        <br/>
+        <br/>
+      
+        <label>
+          Tastes Good?
+        <select name="taste">
+          <option value="Have not tasted it yet">Have not tasted it yet</option>
+          <option value="Yes">Yes</option>
+          <option value="No">No</option>
+        </select>
+        <br/>
+        <br/>
+
+        <input type="submit" value="ADD FISH" />
+    </form>
+
+
+    <%- include('../partials/footer') %>
