@@ -1,0 +1,12 @@
+<%- include('../partials/header') %>
+
+    <h1>Did it taste GOOD?</h1>
+    <form action="/fishes/<%= fish.id %>?_method=PUT" method="POST">     
+        <select name="taste">
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select>
+        <button type="submit">Save</button>
+    </form>
+
+<%- include('../partials/footer') %>

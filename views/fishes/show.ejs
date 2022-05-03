@@ -1,6 +1,13 @@
 <%- include('../partials/header') %>
 
 <h2><%= title %></h2>
+
+<form action="/upload" method="POST" enctype="multipart/form-data">
+  <input type="file" name='image'>
+  <input type="submit">
+</form>
+<br/>
+
 <section id="show-page">
     <div>Date Caught:</div>
         <div><%= fish.dateCaught %></div>
@@ -16,8 +23,10 @@
         <div><%= fish.taste %></div>
   </section>
   <br/>
+
+  <button><a href="/fishes/<%= fish._id %>/edit">Update Taste</a></button>
   <br/>
-  
+
   <h2>Comments</h2>
     <table>
       <thead>
@@ -25,6 +34,7 @@
           <!-- Table headers -->
           <th>Comment</th> 
           <th>Rating</th>
+          <th></th>
         </tr>
       </thead>
       <tbody>
@@ -33,6 +43,11 @@
           <tr>
             <td><%= c.comment %></td>
             <td><%= c.rateCatch %>★</td>
+            <td>
+              <!-- <form class="delete-comment" action="/fishes/<%= fish._id %>/comments/<%= fish.comments.id %>?_method=DELETE" method="POST">
+                <button type="submit">X</button>
+              </form> -->
+            </td>
           </tr>
         <% }); %>
       </tbody>
@@ -61,5 +76,11 @@
 
     <input type="submit" value="Add Comment">
   </form>
+    <br/>
+
+  <form class="delete-form" action="/fishes/<%= fish._id %>?_method=DELETE" method="POST">
+    <button type="submit">Delete Fish Entry</button>
+  </form>
+
 
 <%- include('../partials/footer') %>

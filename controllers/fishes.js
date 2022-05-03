@@ -4,7 +4,10 @@ module.exports = {
     index,
     new: newFish,
     create,
-    show
+    show,
+    delete: deleteFish,
+    edit,
+    update
 }
 
 function index(req, res) {
@@ -41,4 +44,26 @@ function show(req, res) {
         console.log(fish.id)
         res.render('fishes/show', {title: 'Current Fish Details', fish})
     })
+}
+
+async function deleteFish(req, res) {
+    console.log(req.params.id)
+    
+    const fish = await Fish.findByIdAndDelete(req.params.id)
+    console.log(Fish)
+    res.redirect('/fishes')
+}
+
+function edit(req, res) {
+    Fish.findById(req.params.id, function(err, fish) {
+        console.log(fish)
+        res.render('fishes/edit', {fish})
+    })
+}
+
+async function update(req, res) {
+    console.log(req.params.id, req.body)
+    const fish = await Fish.findByIdAndUpdate(req.params.id, req.body)
+    // req.params.id will find the ID of the object, then replace with whatever in req.body
+    res.redirect('/fishes/'+ req.params.id)
 }

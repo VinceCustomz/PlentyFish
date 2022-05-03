@@ -3,7 +3,9 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var bb = require('express-busboy');
 var methodOverride = require('method-override');
+require('dotenv').config()
 
 require('./config/database');
 
@@ -12,6 +14,9 @@ var fishesRouter = require('./routes/fishes');
 var commentsRouter = require('./routes/comments')
 
 var app = express();
+bb.extend(app, {
+  upload: true
+})
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
