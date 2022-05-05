@@ -1,34 +1,43 @@
 <%- include('../partials/header') %>
 
-<h2><%= title %></h2>
+<h1><%= title %></h1>
 
-<form action="/upload" method="POST" enctype="multipart/form-data">
-  <input type="file" name='image'>
-  <input type="submit">
-</form>
-<br/>
+<div class="d-flex">
+<img class="fishphoto container" src="<%= fish.uploadLink %>">
 
-<section id="show-page">
-    <div>Date Caught:</div>
-        <div><%= fish.dateCaught %></div>
-    <div>Fish Spice:</div>
-        <div><%= fish.fishSpecies %></div>
-    <div>Weight:</div>
-        <div><%= fish.weight %></div>
-    <div>Length:</div>
-        <div><%= fish.lengthFish %></div>
-    <div>Location:</div>
-        <div><%= fish.location %></div>
-    <div>Taste Good?</div>
-        <div><%= fish.taste %></div>
-  </section>
-  <br/>
-
-  <button><a href="/fishes/<%= fish._id %>/edit">Update Taste</a></button>
-  <br/>
+  <table class="table table-dark table-striped table-hover w-50 m-auto">
+    <tr>
+    </tr>
+    <tr>
+      <td>Date Caught</td>
+      <td><%= fish.dateCaught %></td>
+    </tr>
+    <tr>
+      <td>Fish Species</td>
+      <td><%= fish.fishSpecies %></td>
+    </tr>
+    <tr>
+      <td>Weight</td>
+      <td><%= fish.weight %></td>
+    </tr>
+    <tr>
+      <td>Length</td>
+      <td><%= fish.lengthFish %></td>
+    </tr>
+    <tr>
+      <td>Location</td>
+      <td><%= fish.location %></td>
+    </tr>
+    <tr>
+      <td>Tastes Good?</td>
+      <td><%= fish.taste %><button type="button" class="btn btn-primary tasteUpdateButton mx-2"><a href="/fishes/<%= fish._id %>/edit">Update Taste</a></td>
+    </tr>
+  </table>
+</div>
 
   <h2>Comments</h2>
-    <table>
+  <% if (fish.comments.length) { %>
+    <table class="table table-light table-striped table-hover w-50 m-auto">
       <thead>
         <tr>
           <!-- Table headers -->
@@ -41,7 +50,7 @@
         <!-- Table body -->
         <% fish.comments.forEach(function(c) { %>
           <tr>
-            <td><%= c.comment %></td>
+            <td ><%= c.comment %></td>
             <td><%= c.rateCatch %>★</td>
             <td>
               <!-- <form class="delete-comment" action="/fishes/<%= fish._id %>/comments/<%= fish.comments.id %>?_method=DELETE" method="POST">
@@ -52,35 +61,37 @@
         <% }); %>
       </tbody>
     </table>
+    <% } else { %>
+      <h5>No comments yet.. *cricket noise*</h5>
+      <h5>Leave a comment to put a smile on someone's face 😄</h5>
+    <% } %>
+    <br/>
+  
+  <form id="add-comment-form" method="POST" action="/fishes/<%= fish._id %>/comments">
+     <div class="form-floating mb-3 commentbox">
+       
+        <input type="text" name="comment" class="form-control" id="floatingInput" placeholder="name@example.com">
+        <label for="floatingInput">Comment</label>
+      
+        <select class="form-select form-select-s rateCatch" aria-label=".form-select-lg example" name="rateCatch">
+          <option value="1">1 ★</option>
+          <option value="2">2 ★</option>
+          <option value="3">3 ★</option>
+          <option value="4">4 ★</option>
+          <option value="5"selected>5 ★</option>
+        </select>
 
-  <form id="add-comment-form" method="POST"
-    action="/fishes/<%= fish._id %>/comments">
-    <br/>
-    <label>Comment 
-        <input type="text" name="comment"/>
-    </label>
-    <br/>
+    </div>
 
-    <label>
-        Rate Catch
-      <select name="rateCatch">
-        <option value="1">1 ★</option>
-        <option value="2">2 ★</option>
-        <option value="3">3 ★</option>
-        <option value="4">4 ★</option>
-        <option value="5">5 ★</option>
-      </select>
-      </label>
-    <br/>
-    <br/>
+    <button type="submit" class="btn btn-primary addcomment">Add Comment</button>
 
-    <input type="submit" value="Add Comment">
   </form>
     <br/>
 
+  <div>
   <form class="delete-form" action="/fishes/<%= fish._id %>?_method=DELETE" method="POST">
-    <button type="submit">Delete Fish Entry</button>
+    <button id="delete-button" type="submit" class="btn btn-danger">Delete Fish</button>
   </form>
-
+  </div>
 
 <%- include('../partials/footer') %>

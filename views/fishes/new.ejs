@@ -1,68 +1,75 @@
 <%- include('../partials/header') %>
 
-    <h2><%= title %></h2>
-    <form action="/fishes" method="POST">
-      <label>
-          Date Caught: 
-        <input type="date" name="dateCaught"/>
-      </label>
-        <br/>
+<h1><%= title %></h1>
 
-      <label>
-          Fish Species:
-        <select name="fishSpecies">
-          <option value="Blue Gill">Blue Gill</option>
-          <option value="Bowfin">Bowfin</option>
-          <option value="Carp">Carp</option>
-          <option value="Catfish">Catfish</option>
-          <option value="Gar">Gar</option>
-          <option value="Largemouth Bass" selected>Largemouth Bass</option>
-          <option value="Smallmouth Bass">Smallmouth Bass</option>
-          <option value="Muskie">Muskie</option>
-          <option value="Northern Pike">Northern Pike</option>
-          <option value="Rock Bass">Rock Bass</option>
-          <option value="Pickerel">Pickerel</option>
-          <option value="Salmon">Salmon</option>
-          <option value="Sturgeon">Sturgeon</option>
-          <option value="Sucker">Sucker</option>
-          <option value="Sunfish">Sunfish</option>
-          <option value="Trout">Trout</option>
-          <option value="Walleye">Walleye</option>
-          <option value="Whitefish">Whitefish</option>
-          <option value="Yellow Perch">Yellow Perch</option>
-        </select>
-        </label>
-      <br/>
+<!-- <form action action="/upload" method="POST" enctype="multipart/form-data">
+  <input type="file" name="image">
+  <input type="submit">
+</form> -->
 
-      <label>
-        Location (nearby city):
-        <input type="text" name="location" />
-      </label>
-        <br/>
+    <form action="/fishes" method="POST" enctype="multipart/form-data">
+      <table class="table table-dark table-striped table-hover w-50 m-auto">
+        <tr>
+          <td>Image Upload</td>
+          <td><input type="file" name="image"></td>
+        </tr>
+        <tr>
+          <td>Date Caught</td>
+          <td><input type="date" name="dateCaught"/></td>
+        </tr>
+        <tr>
+          <td>Fish Species</td>
+          <td><select name="fishSpecies">
+            <option value="Blue Gill">Blue Gill</option>
+            <option value="Bowfin">Bowfin</option>
+            <option value="Carp">Carp</option>
+            <option value="Catfish">Catfish</option>
+            <option value="Gar">Gar</option>
+            <option value="Largemouth Bass" selected>Largemouth Bass</option>
+            <option value="Smallmouth Bass">Smallmouth Bass</option>
+            <option value="Muskie">Muskie</option>
+            <option value="Northern Pike">Northern Pike</option>
+            <option value="Rock Bass">Rock Bass</option>
+            <option value="Pickerel">Pickerel</option>
+            <option value="Salmon">Salmon</option>
+            <option value="Sturgeon">Sturgeon</option>
+            <option value="Sucker">Sucker</option>
+            <option value="Sunfish">Sunfish</option>
+            <option value="Trout">Trout</option>
+            <option value="Walleye">Walleye</option>
+            <option value="Whitefish">Whitefish</option>
+            <option value="Yellow Perch">Yellow Perch</option>
+          </select></td>
+        </tr>
+        <tr>
+          <td>Location (nearby city)</td>
+          <td><input type="text" name="location" /></td>
+        </tr>
+        <tr>
+          <td>Weight</td>
+          <td><input type="number" name="weight" /> lbs.</td>
+        </tr>
+        <tr>
+          <td>Length</td>
+          <td><input type="number" name="lengthFish" /> in.</label></td>
+        </tr>
+        <tr>
+          <td>Date Caught</td>
+          <td>
+          <select name="taste">
+            <option value="Un-tasted">Un-tasted</option>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+            <option value="Released fish">Released fish</option>
+          </select></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><button class="btn btn-primary" type="submit">SUBMIT FISH</button></td>
+        </tr>
+      </table>
 
-      <label>
-        Weight:
-          <input type="number" name="weight" /> lbs.</label>
-      <br/>
-
-      <label>
-        Length:
-        <input type="number" name="lengthFish" /> cm</label>
-        <br/>
-        <br/>
-      
-        <label>
-          Tastes Good?
-        <select name="taste">
-          <option value="Have not tasted it yet">Have not tasted it yet</option>
-          <option value="Yes">Yes</option>
-          <option value="No">No</option>
-        </select>
-        <br/>
-        <br/>
-
-        <input type="submit" value="ADD FISH" />
     </form>
 
 
-    <%- include('../partials/footer') %>
+  <%- include('../partials/footer') %>

@@ -1,8 +1,107 @@
 body {
-  padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  height: 100vh;
 }
 
 a {
-  color: #00B7FF;
+  color: white;
+  text-decoration: none;
+}
+
+a:hover {
+  color: white;
+}
+
+.background {
+  background-image: linear-gradient(90deg, rgba(204, 204, 204, 0.08) 0%, rgba(204, 204, 204, 0.08) 54%,rgba(254, 254, 254, 0.08) 54%, rgba(254, 254, 254, 0.08) 59%,rgba(118, 118, 118, 0.08) 59%, rgba(118, 118, 118, 0.08) 70%,rgba(248, 248, 248, 0.08) 70%, rgba(248, 248, 248, 0.08) 72%,rgba(129, 129, 129, 0.08) 72%, rgba(129, 129, 129, 0.08) 100%),linear-gradient(90deg, rgba(43, 43, 43, 0.06) 0%, rgba(43, 43, 43, 0.06) 10%,rgba(186, 186, 186, 0.06) 10%, rgba(186, 186, 186, 0.06) 34%,rgba(167, 167, 167, 0.06) 34%, rgba(167, 167, 167, 0.06) 46%,rgba(91, 91, 91, 0.06) 46%, rgba(91, 91, 91, 0.06) 66%,rgba(230, 230, 230, 0.06) 66%, rgba(230, 230, 230, 0.06) 100%),linear-gradient(90deg, rgb(69, 130, 137),rgb(23, 220, 77));
+
+  background-size: contain;
+  background-repeat: repeat-y;
+}
+
+h1,
+h2 {
+  text-align: center;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  font-family: 'Kanit', sans-serif;
+}
+
+h5 {
+  text-align: center;
+  font-family: 'Kanit', sans-serif;
+}
+
+.centerTable {
+  text-align: center;
+}
+
+.frontLeft{
+  text-align: right;
+}
+
+.frontRight {
+  text-align: left;
+}
+img.index {
+  width: 50%;
+  height: 50%;
+  border-radius: 15px;
+  padding-bottom: 2rem;
+}
+
+#front-button-left {
+  margin-left: 5px;
+}
+
+#front-button-right {
+  margin-right: 5px;
+}
+
+#delete-button {
+  width: 15vw;
+  display: grid;
+  margin-left: 25%;
+  margin-top: 2rem;
+}
+
+.footer {
+  position:relative;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: gray;
+  color: white;
+  text-align: center;
+}
+
+.commentbox {
+  width: 50%;
+  margin: auto;
+  display: flex;
+}
+
+.rateCatch {
+  width: 20%;
+}
+
+.addcomment {
+  width: 15vw;
+  margin-left: 25%;
+}
+
+img.fishphoto {
+  height: 50%;
+  width: 50%;
+  object-fit: contain;
+  border-radius: 40px;
+}
+
+.tasteUpdateButton {
+  grid-column: 2;
+}
+
+.tastebutton {
+  display: flex;
+  justify-content: center;
 }

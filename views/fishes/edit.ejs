@@ -1,12 +1,12 @@
 <%- include('../partials/header') %>
 
     <h1>Did it taste GOOD?</h1>
-    <form action="/fishes/<%= fish.id %>?_method=PUT" method="POST">     
-        <select name="taste">
-            <option value="Yes">Yes</option>
-            <option value="No">No</option>
-        </select>
-        <button type="submit">Save</button>
+    <form action="/fishes/<%= fish.id %>?_method=PUT" method="POST">
+        <div class="tastebutton">
+            <button name="taste" value="Yes" type="submit" class="btn btn-success btn-lg">YES</button>
+            <button name="taste" value="No" type="submit" class="btn btn-danger btn-lg">NO</button>
+            <button name="taste" value="No" type="submit" class="btn btn-primary btn-lg">RELEASED FISH</button>
+        </div>
     </form>
 
 <%- include('../partials/footer') %>

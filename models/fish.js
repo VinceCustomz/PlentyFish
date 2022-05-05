@@ -34,6 +34,9 @@ const fishSchema = new Schema({
     taste: {
         type: String
     },
+    uploadLink: {
+        type: String
+    },
     comments: [commentSchema]
 
     }, {
