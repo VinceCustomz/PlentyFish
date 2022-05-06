@@ -16,11 +16,11 @@ To have a place for fish-enthusiates to share pictures of their catches to every
 ### Home Page
 ![image](https://user-images.githubusercontent.com/102340067/167074956-b1ac847e-623b-4b16-a51e-1a071fdee7da.png)
 
-### Fish Details
+<!-- ### Fish Details
 ![image](https://user-images.githubusercontent.com/102340067/167075044-8de7f8c3-df3f-4df8-994a-5f0ad60131a6.png)
 
 ### Add a New Fish
-![image](https://user-images.githubusercontent.com/102340067/167075093-cb180f3a-b23f-4d1b-9035-3f7a1521c940.png)
+![image](https://user-images.githubusercontent.com/102340067/167075093-cb180f3a-b23f-4d1b-9035-3f7a1521c940.png) -->
 
 
 ### Resources used
