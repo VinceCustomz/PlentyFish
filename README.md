@@ -32,12 +32,13 @@ To have a place for fish-enthusiates to share pictures of their catches to every
 * Stack Overflow
 
 ### Future Updates / Icebox
-* Sorting
-* Filters
+* Sorting/Filters
 * Randomize the home page images with random pictures from the database
 * Statistics relating to fish (ex. which fish target for consumers, which to avoid)
 * OAuth Authentication and Logins
 * Allowing users to be able to track their own catches
+* Add number of comments
+* Add average rate of catch
 * Transform into dating app?
 
 ### Bug awareness
