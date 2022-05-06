@@ -56,7 +56,7 @@ function create(req, res, next) {
     //from here
     console.log('line 56', req.file)
     let image = base64_encode(req.file.path)
-
+      
     const options = {
         method: 'POST',
         url: 'https://api.imgur.com/3/image',
@@ -83,10 +83,8 @@ function create(req, res, next) {
                     console.log(err)
                     return res.render('fishes/new')
                 }
-                
                 console.log(fish)
                 if (err) return console.log(err)
-                let link = body.data.link;
                 res.redirect('/fishes')
             })          
         })
